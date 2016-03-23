@@ -11,7 +11,8 @@ class PagesController extends Controller
     public function starter(){
         $page_data=[
             "title" => "Starter Page",
-            "description" => "Description"
+            "description" => "Description",
+            "current" => "Data siswa"
         ];
         return view('master.layout',$page_data);
     }

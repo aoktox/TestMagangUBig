@@ -39,12 +39,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Page Header
-                <small>Optional description</small>
+                {{ $title or null }}
+                <small>{{ $description or null }}</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> Beranda</a></li>
+                <li class="active">{{ $current or null }}</li>
             </ol>
         </section>
 
@@ -52,15 +52,16 @@
         <section class="content">
 
             <!-- Your Page Content Here -->
+            @yield('content')
 
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.3.0
+            <b>Agus</b> Prasetiyo
         </div>
-        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        Aplikasi data siswa
     </footer>
 </div><!-- ./wrapper -->
 
