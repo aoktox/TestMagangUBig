@@ -9,9 +9,9 @@
                 <img src="{{asset('assets/img/user2-160x160.jpg',env('IS_SECURE'))}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>{{ Auth::user()->name }}</p>
                 <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a href="#"><i class="fa fa-envelope-o text-success"></i> {{ Auth::user()->email }}</a>
             </div>
         </div>
 
@@ -30,18 +30,18 @@
         <ul class="sidebar-menu">
             <li class="header">MENU UTAMA</li>
             <!-- Optionally, you can add icons to the links -->
-            <li>
-                <a href="#"><i class="fa fa-list-ol"></i> <span>Daftar Siswa</span></a>
+            <li {{ (Request::is('dataSiswa') ? 'class=active' : Request::is('/')?'class=active':'') }}>
+                <a href="{{ url('/dataSiswa',"",env('IS_SECURE')) }}"><i class="fa fa-list-ol"></i> <span>Daftar Siswa</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-plus"></i> <span>Tambah Siswa</span></a>
+                <a href="#TambahSiswa" data-toggle="modal"><i class="fa fa-plus"></i> <span>Tambah Siswa</span></a>
             </li>
-            <li>
-                <a href="#"><i class="fa fa-pie-chart"></i> <span>Grafik</span></a>
+            <li {{ (Request::is('grafik') ? 'class=active' : '') }}>
+                <a href="{{ url('grafik',"",env('IS_SECURE')) }}"><i class="fa fa-pie-chart"></i> <span>Grafik</span></a>
             </li>
             <li class="header">ADMIN</li>
             <li>
-                <a href="#"><i class="fa fa-sign-out"></i> <span>Keluar</span></a>
+                <a href="{{ url('/logout',"",env('IS_SECURE')) }}"><i class="fa fa-sign-out"></i> <span>Keluar</span></a>
             </li>
         </ul><!-- /.sidebar-menu -->
     </section>

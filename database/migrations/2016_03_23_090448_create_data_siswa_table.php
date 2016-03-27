@@ -16,7 +16,7 @@ class CreateDataSiswaTable extends Migration
             $table->string('nis')->unique();
             $table->string('nama');
             $table->char('j_kel');
-            $table->string('tmp_lahir');
+            /*$table->string('tmp_lahir');*/
             $table->timestamp('tgl_lahir');
             $table->text('alamat');
             $table->timestamps();
