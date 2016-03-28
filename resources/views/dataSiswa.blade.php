@@ -230,18 +230,20 @@
                         <h3 class="panel-title">Data Siswa</h3>
                     </div>
                     <div class="panel-body">
-                    <table class="table table-bordered" id="users-table">
-                        <thead>
-                        <tr>
-                            <th width="5px">NIS</th>
-                            <th>Nama</th>
-                            <th>L/P</th>
-                            <th>Lahir</th>
-                            <th>Alamat</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                    </table>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="users-table">
+                                <thead>
+                                <tr>
+                                    <th width="5px">NIS</th>
+                                    <th>Nama</th>
+                                    <th>L/P</th>
+                                    <th>Lahir</th>
+                                    <th>Alamat</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
