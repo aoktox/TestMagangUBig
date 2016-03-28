@@ -8,8 +8,8 @@ Aplikasi ini saya buat sebagai persyaratan magang di [UBig](http://ubig.co.id/)
 
 ## Fitur
 
-### Login
-### Tambah data
-### Edit data
-### Delete data
-### Grafik
+- Login
+- Tambah data
+- Edit data
+- Delete data
+- Grafik
