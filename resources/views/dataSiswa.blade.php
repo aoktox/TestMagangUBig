@@ -9,7 +9,8 @@
 <script src="{{asset('assets/plugins/datatables/jquery.dataTables.min.js',env('IS_SECURE'))}}"></script>
 <script src="{{asset('assets/plugins/datatables/dataTables.bootstrap.min.js',env('IS_SECURE'))}}"></script>
 <script src="{{ asset("assets/js/sweetalert.min.js",env('IS_SECURE')) }}"></script>
-<script>
+<script src="{{ asset("assets/js/custom/dataSiswa.js",env('IS_SECURE')) }}"></script>
+{{--<script>
     var dataTabel;
     $.ajaxSetup({
         headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
@@ -104,7 +105,7 @@
             }
         });
     });
-</script>
+</script>--}}
 @stop
 @section('content')
     <div class="col-md-12" style="padding-left: 0px;padding-right: 0px;">

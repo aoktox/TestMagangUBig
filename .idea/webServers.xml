@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6712a999-5e70-452e-8eeb-ee15a4cde3cf" name="Agung-hosting" url="http://dinacom20.guurle.com">
+        <fileTransfer host="dinacom20.guurle.com" port="21" username="itpens@dinacom20.guurle.com">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

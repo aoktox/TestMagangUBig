@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
 
 class PagesController extends Controller
@@ -78,7 +79,7 @@ class PagesController extends Controller
         }
         else
             $siswa = Siswa::where('nis',$request->nis)->first();
-            return $siswa;
+        return $siswa;
     }
 
     public function editDataSiswaPost(Request $request){
@@ -87,5 +88,24 @@ class PagesController extends Controller
         }
         Siswa::where('nis',$request->nis)->update($request->except(['_token','nis']));
         return redirect()->back()->with('status', 'Data NIS '.$request->nis.' berhasil diperbarui');
+    }
+
+    public function getJumlahSiswa(){
+        $data = Siswa::select(DB::raw('j_kel as label'),
+            DB::raw('count(j_kel) as `value`'))
+            ->groupBy('J_kel')
+            ->get();
+        return $data;
+    }
+
+    public function getTglLahirSiswa(){
+        $data = Siswa::select(
+            DB::raw('year(tgl_lahir) as tahun'),
+            DB::raw('SUM(j_kel ="L") as L'),
+            DB::raw('SUM(j_kel ="P") as P')
+        )
+            ->groupBy('tahun')
+            ->get();
+        return $data;
     }
 }

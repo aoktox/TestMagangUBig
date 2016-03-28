@@ -33,4 +33,19 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('deleteDataSiswa','PagesController@deleteDataSiswa');
     Route::post('editDataSiswa','PagesController@editDataSiswa');
     Route::post('editDataSiswaPost','PagesController@editDataSiswaPost');
+    Route::get('getJumlahSiswa','PagesController@getJumlahSiswa');
+
+    Route::get('getTglLahirSiswa','PagesController@getTglLahirSiswa');
+
+    Route::get('api', function(){
+        $stats = DB::table('siswa')
+            ->groupBy('created_at')
+            ->orderBy('created_at', 'ASC')
+            ->get([
+                DB::raw('Date(created_at) as date'),
+                DB::raw('COUNT(*) as value')
+            ]);
+
+        return $stats;
+    });
 });
